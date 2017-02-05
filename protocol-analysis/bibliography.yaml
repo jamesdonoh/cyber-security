@@ -1,0 +1,50 @@
+---
+references:
+- id: wireshark
+  title: 'Wireshark User''s Guide: Capturing with tcpdump for viewing with Wireshark'
+  author:
+  - family: Lamping
+    given: Ulf
+  - family: Sharpe
+    given: Richard
+  - family: Warnicke
+    given: Ed
+  type: webpage
+  URL: https://www.wireshark.org/docs/wsug_html_chunked/AppToolstcpdump.html
+  issued: 2014
+  accessed:
+    date-parts:
+    - - 2017
+      - 02
+      - 03
+- id: rfc1945
+  title: 'RFC1945: Hypertext Transfer Protocol -- HTTP/1.0'
+  author:
+  - family: Berners-Lee
+    given: T.
+  - family: Fielding
+    given: R.
+  - family: Frystyk
+    given: H.
+  type: webpage
+  URL: https://tools.ietf.org/search/rfc1945
+  issued: 1996
+  accessed:
+    date-parts:
+    - - 2017
+      - 02
+      - 03
+- id: rfc919
+  title: 'RFC919: Broadcasting Internet Datagrams'
+  author:
+  - family: Mogul
+    given: Jeffrey
+  type: webpage
+  URL: https://tools.ietf.org/html/rfc919
+  issued: 1984
+  accessed:
+    date-parts:
+    - - 2017
+      - 02
+      - 03
+...

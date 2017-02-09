@@ -1,20 +1,45 @@
 ---
 references:
-- id: wireshark
-  title: 'Wireshark User''s Guide: Capturing with tcpdump for viewing with Wireshark'
+- id: pubal
+  title: 'Web Application Firewalls: Enterprise Techniques'
   author:
-  - family: Lamping
-    given: Ulf
-  - family: Sharpe
-    given: Richard
-  - family: Warnicke
-    given: Ed
+  - family: Pubal
+    given: Jason
   type: webpage
-  URL: https://www.wireshark.org/docs/wsug_html_chunked/AppToolstcpdump.html
-  issued: 2014
+  URL: https://uk.sans.org/reading-room/whitepapers/application/web-application-firewalls-35817
+  issued: 2015
   accessed:
     date-parts:
     - - 2017
       - 02
-      - 03
+      - 05
+- id: conklin
+  title: Principles of Computer Security
+  author:
+  - family: Conklin
+    given: Wm. Arthur
+  - family: White
+    given: Greg
+  - family: Williams
+    given: Dwayne
+  - family: Davis
+    given: Roger
+  - family: Cothren
+    given: Chuck
+  type: book
+  edition: Fourth edition
+  publisher: McGraw-Hill
+  issued: 2016
+- id: stallings
+  title: 'Computer Security: Principles and Practice'
+  author:
+  - family: Stallings
+    given: William
+  - family: Brown
+    given: Lawrie
+  type: book
+  edition: Third edition; Global edition
+  publisher: Pearson
+  publisher-place: Harlow, Essex
+  issued: 2015
 ...

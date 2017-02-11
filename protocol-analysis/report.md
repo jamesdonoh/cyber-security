@@ -62,4 +62,42 @@ The hosts that appear to be sending broadcast IP packets (via UDP) are therefore
 
 The packets are UDP datagrams on ports 137 and 138 (NetBIOS), meaning we can infer that these hosts are likely to be running Windows.
 
+## `capture2.pcap`
+
+The Address Resolution Protocol (ARP) [@rfc826] is used to determine the hardware (MAC) address of a target host based based on its IP address. In normal operation, the host attempting to resolve a MAC address sends a broadcast 'request' message containing the IP address that is being queried. This will be received by all network interface cards (NICs) on the same subnet. The target host then sends a 'reply' message containing its own MAC address to the host that made the request, which caches it for later reuse.
+
+Because ARP has no built-in support for authenticating such messages, it is possible for a malicious user to use it to disrupt network activity. In 'ARP poisoning', an attacker sends fake ARP requests or replies with the intention of either intercepting network traffic between two hosts (man-in-the-middle attack) or producing a denial-of-service (DoS).
+
+### Method of detection
+
+ARP poisoning can be suspected when a host begins sending ARP packets containing a 'sender' hardware (MAC) address that is different to a MAC address already associated with the given protocol address (IP) in earlier traffic.
+
+Therefore, a simple implementation of an ARP poisoning sensor is to record the sender MAC address associated with the IP address in each ARP packet. When a new ARP packet is received, if a different sender MAC is given for the IP in address in question than one previously recorded, an alert can be issued and any other required action taken.
+
+In order to demonstrate this approach using the supplied packet capture file, a Scapy script (`poisonarp.py`) was written. This script implements the above approach by iterating over each packet in the capture and storing a mapping of IP address to MAC address in a dictionary object.
+
+The script can be executed as follows:
+
+    $ python poisonarp.py cwk_pcaps/capture2.pcap
+
+### Example output
+
+    Read 328 packets from cwk_pcaps/capture2.pcap
+    WARNING: suspected ARP poisoning attack at packet 298
+      Attacker: 00:03:ff:98:98:02 (last seen using 192.168.0.2)
+      Victim: 00:00:00:00:00:00 (192.168.0.1)
+      Hijacked resource: 00:03:ff:98:98:03 (192.168.0.3)
+
+### Limitations
+
+To identify the victim, this script uses the 'target' hardware and protocol addresses given in the ARP packet, which is sufficient for the packet capture given. However, ARP poisioning can also be performed by broadcasting malicious ARP replies (so-called Gratuitous ARP or GARP). In this scenario the intended victim may not be immediately apparent.
+
+Also, there are some scenarios in which the MAC address for an IP address may change legitimately (for example due to replacement of a part). These events will produced 'false positives' in a sensor that uses this approach.
+
+### Alternatives: Wireshark
+
+Wireshark also identifies this type of attack using the message 'Duplicate IP address detected' (see yellow text in Figure \ref{capture2-duplicate}).
+
+![Wireshark showing duplicate IP address usage in capture2.pcap\label{capture1-broadcast}](capture2-duplicate.png){ width=50% }
+
 # References

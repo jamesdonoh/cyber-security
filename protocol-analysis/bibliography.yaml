@@ -47,4 +47,17 @@ references:
     - - 2017
       - 02
       - 03
+- id: rfc826
+  title: 'RFC829: An Ethernet Address Resolution Protocol'
+  author:
+  - family: Plummer
+    given: David C.
+  type: webpage
+  URL: https://tools.ietf.org/html/rfc826
+  issued: 1982
+  accessed:
+    date-parts:
+    - - 2017
+      - 02
+      - 11
 ...

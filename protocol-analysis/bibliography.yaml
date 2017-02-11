@@ -60,4 +60,13 @@ references:
     - - 2017
       - 02
       - 11
+- id: mishra
+  title: Mastering Wireshark
+  author:
+  - family: Mishra
+    given: Charit
+  type: book
+  issued: 2016
+  publisher: Packt Publishing
+  publisher-place: Birmingham, UK
 ...

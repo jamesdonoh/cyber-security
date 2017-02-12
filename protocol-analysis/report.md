@@ -98,7 +98,7 @@ Also, there are some scenarios in which the MAC address for an IP address may ch
 
 Wireshark also identifies this type of attack using the message 'Duplicate IP address detected' (see yellow text in Figure \ref{capture2-duplicate}).
 
-![Wireshark showing duplicate IP address usage in capture2.pcap\label{capture1-broadcast}](capture2-duplicate.png){ width=50% }
+![Wireshark showing duplicate IP address usage in capture2.pcap\label{capture2-duplicate}](capture2-duplicate.png){ width=50% }
 
 ## `capture3.pcap`
 

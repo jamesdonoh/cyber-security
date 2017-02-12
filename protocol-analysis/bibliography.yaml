@@ -69,4 +69,32 @@ references:
   issued: 2016
   publisher: Packt Publishing
   publisher-place: Birmingham, UK
+- id: orebaugh
+  title: 'Wireshark & Ethereal Network Protocol Analyzer Toolkit'
+  author:
+  - family: Orebaugh
+    given: Angela
+  - family: Ramirez
+    given: Gilbert
+  - family: Beale
+    given: Jay
+  type: book
+  issued: 2006
+  publisher: Syngress
+  publisher-place: Rockland, MA
+- id: fluhrer
+  title: 'Weaknesses in the Key Scheduling Algorithm of RC4'
+  author:
+  - family: Fluhrer
+    given: Scott
+  - family: Mantin
+    given: Itsik
+  - family: Shamir
+    given: Adi
+  type: article-journal
+  issued: 2001
+  container-title: Selected Areas of Cryptography
+  publisher: Springer
+  volume: 2259
+  page: 1-24
 ...

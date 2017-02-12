@@ -100,4 +100,34 @@ Wireshark also identifies this type of attack using the message 'Duplicate IP ad
 
 ![Wireshark showing duplicate IP address usage in capture2.pcap\label{capture1-broadcast}](capture2-duplicate.png){ width=50% }
 
+## `capture3.pcap`
+
+The `file` tool identifies this capture as follows:
+
+    capture3.pcap: tcpdump capture file (little-endian) - version 2.4 (802.11, capture length 65535)
+
+This reveals that unlike the other capture files (which were captured on an Ethernet network) this capture was created using a wireless (802.11) network.
+
+Wireshark reports that the capture file contains 25895 packets. Using the display filter `wlan.fc.protected == 1` reveals that 59.5% of the packets (100% of data frames) are flagged as `protected` (see Figure \ref{capture3-protected}). This bit indicates that the packet data is encrypted using an 802.11 encryption mechanism such as WEP (Wired Equivalent Privacy) or TKIP [@orebaugh].
+
+![Wireshark showing encrypted Wifi packets in capture3.pcap\label{capture3-protected}](capture3-protected.png){ width=50% }
+
+This means that it will not be possible to simply use Wireshark's protocol dissection functionality to extract passwords from the capture, as the relevant data is encrypted. However, the display filter `wlan.wep.iv`, which identifies frames that include the WEP Initialization Vector (IV), shows the same list of packets, meaning that all of these packets are encrypted using WEP.
+
+The stream cipher used by WEP has been shown to be insecure and vulnerable to passive attack by an eavesdropper [@fluhrer], given access to sufficient IVs. The tool [aircrack-ng](https://www.aircrack-ng.org/) can be used to crack WEP encryption using a packet capture file as follows:
+
+    $ aircrack-ng cwk_pcaps/capture3.pcap
+
+This successfully extracts the WEP key `6B:69:6E:67:73` ("kings") from the capture file as shown in figure \ref{capture3-aircrack}.
+
+![Output from aircrack-ng after cracking WEP on capture3.pcap\label{capture3-aircrack}](capture3-aircrack.png){ width=50% }
+
+If we input this key in hexadecimal form into Wireshark (using _Preferences > Protocols > IEEE 802.11 > Decryption Keys_) it will automatically decrypt the WEP-encrypted packets. Using the `http.request` display filter we can see that the HTTP requests being sent include the header (Figure \ref{capture3-authorization}):
+
+![Wireshark showing decrypted HTTP traffic from capture3.pcap\label{capture3-authorization}](capture3-authorization.png){ width=50% }
+
+    Authorization: Basic c3dlZXg6bXlzd2VleA==
+
+Using the same Python fragment used for `capture1.pcap` above we can therefore discover that the HTTP Basic username was 'sweex' and the password was 'mysweex'.
+
 # References

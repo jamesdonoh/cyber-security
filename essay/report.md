@@ -35,4 +35,24 @@ The lab demonstrates the use of ModSecurity as an NSM sensor sending logs and al
 
 In conclusion, the author re-emphasises the importance of web applications today and re-states that virtual patching can quickly reduce risk cause by vulnerabilities in production web applications, and may be the only option available for legacy or COTS applications. The author suggests that WAFs have visibility into application traffic that no other monitoring tool is capable of. Finally the author points out the specialist skill set required for application security monitoring as opposed to 'general' network monitoring, and recommends that suitable training is provided.
 
+# Organisational impact of topic
+
+The topic discussed by the paper, namely the use of WAFs to manage some of the risks associated with hosting web applications, is relevant to the British Broadcasting Corporation (BBC) and its News website in particular. BBC News receives 28m monthly unique visitors in the UK alone [@dcms] and has a 30% share of Britain's market for online news [@guardian], which makes it a high-profile target for outside attacks. Indeed, BBC web intrastructure has been the subject of numerous distributed denial-of-service (DDoS) attacks over recent years, some of which have caused major outages [@bbc2015].
+
+Several classes of potential intruder might perceive the BBC website as an appealing target. Although as a public-service broadcaster it does not process payments or other financial information, the organisation's current drive to serve more customised and tailored content online [@bbc2016] entails gathering an increasing amount of personal data about users, which could attract cyber criminals focused on identity theft. Because of its high-profile nature and the perception of it as a trustworthy news source, BBC News could be specifically targeted by 'hacktivist' groups motivated by a social or political cause [@stallings]. Most concerning of all is the risk from highly-skilled Advanced Persistent Threats (APTs) backed by foreign governments, which are reported to be increasingly targeting the UK [@independent]. The Verizon 2016 Data Breach Investigations Report [-@dbir] shows that public or government targets were the largest victims of recent data breaches attributed to cyber espionage.
+
+Also important in this context is the rise in web applications as an attack vector. The ENISA Threat Landscape report [-@enisa] lists web application attacks as the third-most significant threat, with a 15% increase in prevalence. Similarly the Verizon report [-@dbir] shows that web application attacks are growing across almost all industries, suggesting one reason for this is that web applications may be the only route in to sensitive data in storage. It also cites input validation as a key recommended control for web applications.
+
+ 
+
+
+## Next bits
+
+- Enumerate threat consequences
+- Cloud
+- DevOps
+- Organisational issues
+
+# Policy
+
 # References

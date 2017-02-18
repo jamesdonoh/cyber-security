@@ -42,4 +42,122 @@ references:
   publisher: Pearson
   publisher-place: Harlow, Essex
   issued: 2015
+- id: maiwald
+  title: Security Planning and Disaster Recovery
+  author:
+  - family: Maiwald
+    given: Eric
+  - family: Sieglein
+    given: William
+  type: book
+  publisher: McGraw-Hill
+  publisher-place: Berkley, CA
+  issued: 2002
+- id: pfleeger
+  title: Security in Computing
+  author:
+  - family: Pfleeger
+    given: Charles P.
+  - family: Pfleeger
+    given: Shari Lawrence
+  - family: Margulies
+    given: Jonathan
+  type: book
+  edition: Fifth edition
+  publisher: Prentice Hall
+  publisher-place: Upper Saddle River, NJ
+  issued: 2015
+- id: abbadi
+  title: Cloud Management and Security
+  author:
+  - family: Abbadi
+    given: Imad M.
+  type: book
+  publisher: John Wiley
+  publisher-place: Chichester, West Sussex
+  issued: 2014
+- id: dcms
+  title: 'BBC television, radio and online services: An assessment of market impact and distinctiveness'
+  author:
+  - literal: DCMS
+  type: webpage
+  issued: 2016
+  URL: https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/504012/FINAL_-_BBC_market_impact_assessment.pdf
+  accessed:
+    date-parts:
+    - - 2017
+      - 02
+      - 18
+- id: guardian
+  title: BBC websites dominate the market in online news views
+  author:
+  - literal: The Guardian
+  type: webpage
+  issued: 2016
+  URL: https://www.theguardian.com/media/greenslade/2016/feb/09/bbc-websites-dominate-the-market-in-online-news-views
+  accessed:
+    date-parts:
+    - - 2017
+      - 02
+      - 18
+- id: bbc2015
+  title: Web attack knocks BBC websites offline
+  author:
+  - literal: BBC
+  type: webpage
+  issued: 2015
+  URL: http://www.bbc.co.uk/news/technology-35204915
+  accessed:
+    date-parts:
+    - - 2017
+      - 02
+      - 18
+- id: bbc2016
+  title: BBC unveils next stage to make a more personal BBC for everyone
+  author:
+  - literal: BBC
+  type: webpage
+  issued: 2016
+  URL: http://www.bbc.co.uk/mediacentre/latestnews/2016/a-more-personal-bbc-for-everyone
+  accessed:
+    date-parts:
+    - - 2017
+      - 02
+      - 18
+- id: independent
+  title: Russian hackers pose increasing threat to UK's national security, GCHQ chief warns
+  author:
+  - literal: Independent
+  type: webpage
+  issued: 2016
+  URL: http://www.independent.co.uk/news/uk/home-news/russian-hackers-target-uk-claims-gchq-government-cyber-security-chief-fake-news-a7576646.html
+  accessed:
+    date-parts:
+    - - 2017
+      - 02
+      - 18
+- id: dbir
+  title: 2016 Data Breach Investigations Report
+  author:
+  - literal: Verizon
+  type: webpage
+  issued: 2016
+  URL: http://www.verizonenterprise.com/verizon-insights-lab/dbir/2016/
+  accessed:
+    date-parts:
+    - - 2017
+      - 02
+      - 18
+- id: enisa
+  title: ENISA Threat Landscape Report 2016
+  author:
+  - literal: ENISA
+  type: webpage
+  issued: 2016
+  URL: https://www.enisa.europa.eu/publications/enisa-threat-landscape-report-2016
+  accessed:
+    date-parts:
+    - - 2017
+      - 02
+      - 18
 ...

@@ -37,21 +37,35 @@ In conclusion, the author re-emphasises the importance of web applications today
 
 # Organisational impact of topic
 
-The topic discussed by the paper, namely the use of WAFs to manage some of the risks associated with hosting web applications, is relevant to the British Broadcasting Corporation (BBC) and its News website in particular. BBC News receives 28m monthly unique visitors in the UK alone [@dcms] and has a 30% share of Britain's market for online news [@guardian], which makes it a high-profile target for outside attacks. Indeed, BBC web intrastructure has been the subject of numerous distributed denial-of-service (DDoS) attacks over recent years, some of which have caused major outages [@bbc2015].
+The topic discussed by the paper, namely the use of WAFs to manage some of the risks associated with hosting web applications, is relevant to the British Broadcasting Corporation (BBC) and its News website in particular. BBC News receives 28m monthly unique visitors in the UK alone [@dcms] and has a 30% share of Britain's market for online news [@guardian], which makes it a high-profile target for outside attacks. Indeed, BBC web intrastructure has been the subject of numerous distributed denial-of-service (DDoS) attacks over recent years, some of which have caused major outages [@bbc2015a].
+
+The BBC is currently regulated by the BBC Trust, which sets high-level policies and codes for the running of the organisation, including the way that 'key operating risks' are reported and handled by the Executive Board [@bbc2015b]. Any specific policies created around information security need to take into account this supervisory framework.
+
+## Threat characteristics
 
 Several classes of potential intruder might perceive the BBC website as an appealing target. Although as a public-service broadcaster it does not process payments or other financial information, the organisation's current drive to serve more customised and tailored content online [@bbc2016] entails gathering an increasing amount of personal data about users, which could attract cyber criminals focused on identity theft. Because of its high-profile nature and the perception of it as a trustworthy news source, BBC News could be specifically targeted by 'hacktivist' groups motivated by a social or political cause [@stallings]. Most concerning of all is the risk from highly-skilled Advanced Persistent Threats (APTs) backed by foreign governments, which are reported to be increasingly targeting the UK [@independent]. The Verizon 2016 Data Breach Investigations Report [-@dbir] shows that public or government targets were the largest victims of recent data breaches attributed to cyber espionage.
 
-Also important in this context is the rise in web applications as an attack vector. The ENISA Threat Landscape report [-@enisa] lists web application attacks as the third-most significant threat, with a 15% increase in prevalence. Similarly the Verizon report [-@dbir] shows that web application attacks are growing across almost all industries, suggesting one reason for this is that web applications may be the only route in to sensitive data in storage. It also cites input validation as a key recommended control for web applications.
+Also important in this context is the rise in web applications as an attack vector. The ENISA Threat Landscape report [-@enisa] lists web application attacks as the third-most significant threat, with a 15% increase in prevalence. Similarly the Verizon report [-@dbir] shows that web application attacks are growing across almost all industries, suggesting one reason for this is that web applications may be the only route in to sensitive data in storage. (It also cites input validation as a key recommended control for web applications.) This suggests indicates that web application attacks are a risk in particular need of management.
 
- 
+## Transition to cloud computing (+DevOps?)
 
+Over the past few years the BBC has started migrating some of its online services from a centrally-managed and largely uniform PHP-based application stack running on dedicated, colocated server hardware to a heterogenous cloud-based model in which products such as News and iPlayer have relative freedom to make technology choices that suit their needs. Migrating to the cloud will enable a significant reduction in data centre costs, however the transitional 'hybrid' cloud model currently employed results in an increased network attack surface (Figure \ref{cloud}).
 
-## Next bits
+Concomitant with the move to the cloud, the in-house production and management of online services at the BBC is beginning to embrace a 'DevOps' philosophy [@devops] based around the idea of continuous delivery (CD). Where in the past developers wrote software that was then handed over to a dedicated operations team (with a specialised skillset) for deployment into production, these traditional organisational siloes are breaking down, with responsibility for deployment increasingly being shared with developers. This entails developers gaining a deeper understanding of the production environment, including operating system and networking factors, and therefore of the information security issues unique to these domains.
 
-- Enumerate threat consequences
-- Cloud
-- DevOps
-- Organisational issues
+## Stakeholder attitudes and expected responses
+
+This section identifies some of the key stakeholders within BBC News and their relationship to the topic. Here 'stakeholders' is defined as anyone who may be concerned about or affected by the topic, rather than just senior managers. Terms printed in _italics_ are used as per the definitions in RFC4949 [-@rfc4949].
+
+**End users** -- The end users of BBC News services are drawn from the global web audience and have a number of expectations. Surveys show that UK audiences perceive the BBC website as the most trustworthy, accurate and impartial source of news [@dcms]. Any successful _threat action_ that compromises the _data integrity_ of BBC News (for example, through the _falsification_ of news reports, giving rise to _deception_) will have a major impact on user perceptions and therefore public support for the BBC. End users also have an expectation of _availability_, i.e. that BBC News services can be delivered when the users want them. One potential threat action end users would be concerned about would therefore be _obstruction_, with a consequence of _disruption_ to BBC services.
+
+**Web application developers** -- These are responsible for writing the application software behind BBC News online services. They should already be aware of the most critical types of web application weakness, such as the OWASP Top 10 [-@owasp], and be following best practices for avoiding them when writing code. They are now increasingly expected to have a broader range of skills encompassing aspects of 'DevOps', but they may lack experience or confidence in some areas. They alone have a detailed understanding of the internal workings of applications and are able to specify, for example, patterns of valid input that applications should receive. They may be interested in learning more about using WAFs to supplement protections in application code.
+
+**Network administrators**
+
+**Information security officers**
+
+**Senior management** -- Managers at the BBC can see the benefit of CD in reducing the time it takes to get a new feature into production, in order to learn more about customer needs and inform the next iteration of development. However they are also most aware of the potential consequences of any harm to the BBC's reputation caused by a loss of service availability or data integrity. They are keen to reduce hosting costs by driving cloud migration but also do not want to increase the level of risk to which the organisation is exposed. They are likely to have a general understanding of the idea of a 'firewall' but not the specific characteristics or benefits of WAFs.
 
 # Policy
 

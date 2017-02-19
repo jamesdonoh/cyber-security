@@ -100,7 +100,7 @@ references:
     - - 2017
       - 02
       - 18
-- id: bbc2015
+- id: bbc2015a
   title: Web attack knocks BBC websites offline
   author:
   - literal: BBC
@@ -112,6 +112,18 @@ references:
     - - 2017
       - 02
       - 18
+- id: bbc2015b
+  title: 'BBC protocol: Trust oversight of the BBC'
+  author:
+  - literal: BBC Trust
+  type: webpage
+  issued: 2015
+  URL: http://downloads.bbc.co.uk/bbctrust/assets/files/pdf/regulatory_framework/protocols/2015/e1_trust_oversight.pdf
+  accessed:
+    date-parts:
+    - - 2017
+      - 02
+      - 19
 - id: bbc2016
   title: BBC unveils next stage to make a more personal BBC for everyone
   author:
@@ -160,4 +172,39 @@ references:
     - - 2017
       - 02
       - 18
+- id: rfc4949
+  title: 'RFC4949: Internet Security Glossary, Version 2'
+  author:
+  - family: Shirey
+    given: R.
+  type: webpage
+  issued: 2007
+  URL: https://tools.ietf.org/html/rfc4949
+  accessed:
+    date-parts:
+    - - 2017
+      - 02
+      - 19
+- id: owasp
+  title: 'The Open Web Application Security Project Top 10 -2013'
+  author:
+  - literal: OWASP
+  type: webpage
+  issued: 2013
+  URL: https://www.owasp.org/images/f/f8/OWASP_Top_10_-_2013.pdf
+  accessed:
+    date-parts:
+    - - 2017
+      - 02
+      - 19
+- id: devops
+  title: Effective DevOps
+  author:
+  - family: Daniels
+    given: Katherine
+  - family: Davis
+    given: Jennifer
+  type: book
+  publisher: O'Reilly Media
+  issued: 2016
 ...

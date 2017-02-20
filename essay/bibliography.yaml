@@ -207,4 +207,18 @@ references:
   type: book
   publisher: O'Reilly Media
   issued: 2016
+- id: cheswick
+  title: 'Firewalls and Internet Security: Repelling the Wily Hacker'
+  author:
+  - family: Cheswick
+    given: William R.
+  - family: Bellovin
+    given: Steven M.
+  - family: Rubin
+    given: Aviel D.
+  type: book
+  publisher: Addison-Wesley
+  publisher-place: Boston, MA
+  edition: Second edition
+  issued: 2003
 ...

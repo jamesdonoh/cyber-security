@@ -39,7 +39,7 @@ In conclusion, the author re-emphasises the importance of web applications today
 
 The topic discussed by the paper, namely the use of WAFs to manage some of the risks associated with hosting web applications, is relevant to the British Broadcasting Corporation (BBC) and its News website in particular. BBC News receives 28m monthly unique visitors in the UK alone [@dcms] and has a 30% share of Britain's market for online news [@guardian], which makes it a high-profile target for outside attacks. Indeed, BBC web intrastructure has been the subject of numerous distributed denial-of-service (DDoS) attacks over recent years, some of which have caused major outages [@bbc2015a].
 
-The BBC is currently regulated by the BBC Trust, which sets high-level policies and codes for the running of the organisation, including the way that 'key operating risks' are reported and handled by the Executive Board [@bbc2015b]. Any specific policies created around information security need to take into account this supervisory framework.
+The BBC is currently regulated by the BBC Trust, which sets high-level policies and codes for the running of the organisation, including the way that 'key operating risks' are reported and handled by the Executive Board [@bbc2015b]. Any specific policies created around information security need to take into account this supervisory framework, corresponding to the Legislation layer in the policy management hierarchy identified by Hare [-@hare].
 
 ## Threat characteristics
 
@@ -67,6 +67,68 @@ This section identifies some of the key stakeholders within BBC News and their r
 
 **Senior management** -- Managers at the BBC can see the benefit of CD in reducing the time it takes to get a new feature into production, in order to learn more about customer needs and inform the next iteration of development. However they are also most aware of the potential consequences of any harm to the BBC's reputation caused by a loss of service availability or data integrity. They are keen to reduce hosting costs by driving cloud migration but also do not want to increase the level of risk to which the organisation is exposed. They are likely to have a general understanding of the idea of a 'firewall' but not the specific characteristics or benefits of WAFs.
 
-# Policy
+(TODO: add risk register; identify assets)
+
+# Example plan
+
+Given the risks identified above, the BBC should implement a security plan around the use of WAFs within its web hosting infrastructure. Firstly, it should identify potential security controls that can help to satisfy security requirements by reducing each risk to acceptable levels [@nist800-53]. These controls can be broadly classified as management, operational or technical [@stallings]. Table \ref{risk-controls} shows some possible controls for one identified risk.
+
+------------------------------------------------------------------------------------------
+Control                         Class                   Instance of [@nist800-53]
+------------------------------  ----------------------  ----------------------------------
+Vulnerability scan cloud        Management              RA-5 Vulnerablilty Scanning
+origin servers
+
+Detect and block attacks using  Operational,            SI-3 Malicious Code Protection,
+a WAF                           Technical               SC-7 Boundary Protection
+
+Ensure all input validated      Operational             SI-10 Information Input Validation
+in application code
+------------------------------------------------------------------------------------------
+
+Table: Controls for risk 'Hacker attacks cloud origin server directly' \label{risk-controls}
+
+From this list, a cost-benefit analysis indicates that implementing a control around WAF usage may reduce the likelihood and severity of web application attacks with relatively low implementation cost. Looking again at the security policy hierarchy, we can see that the appropriate layer is a 'standard', since it will include "mandatory activities, actions, rules or regulations" [@hare, p 19]. The use of WAFs is unlikely to be specified directly in the higher ('corporate') policy layer above as it involves too much technical detail for senior management to be able to approve, while specific procedures (the layer below) should be devolved to individual product teams, and a guideline is not appropriate since the use of WAFs should be mandatory
+
+The target audience for the BBC WAF standard will be technical architects, web application developers and network administrators, however the standard will indirectly benefit all staff and end users of BBC products by delivering services that are more resilient to attack. The likely proponent of the standard would be the BBC information security function [@howard].
+
+An outline standard for use of WAFs is given below with some of the key information it should include. A different structure/headings may be adopted for consistency with other BBC information security standards.
+
+## Purpose
+
+The purpose of this standard is to increase the security of BBC web applications being hosted in the cloud by requiring all new applications to incorporate a Web Application Firewall (WAF) into their solution architecture.
+
+## Background
+
+(This section could include the information about the threat landscape described in the previous section.)
+
+## Scope
+
+The standard applies to all new public cloud-hosted web applications regardless of domain (bbc.co.uk, bbc.com), cloud provider (AWS, Google Cloud Platform, etc.) or product (e.g. News, Sport, iPlayer). It does not apply to web applications solely for internal use, or to applications deployed within private cloud platforms.
+
+As this is a new standard, it does not apply to existing web applications that went live before the effective date. Future versions of this standard may include a requirement for WAFs to be used for existing applications.
+
+## Policy
+
+In addition to complying with existing BBC policies [link] around analysis of common web application weaknesses (e.g. OWASP Top 10, CWE/SANS Top 25), it is mandatory for cloud-hosted web applications to be protected against common attacks through the deployment of a WAF or equivalent component.
+
+This standard does not specify the use of a specific WAF product or architecture. However, the following mandatory requirements must be observed:
+
+- The WAF should be 'inline' at all times
+- All traffic through the WAF should be logged for auditing purposes
+- WAF may be implementated as software-as-a-service (SaaS) or custom instance
+- Products must review their WAF using the Web Application Firewall Evaluation Criteria 1.0
+
+## Compliance
+
+The information security department (InfoSec) is responsible for ensuring compliance with this standard and may request evidence from product teams at any time that their WAF is in place and operational. In addition they may perform periodic vulnerability scans to verify that WAF functionality is adequate.
+
+Non-compliance with this standard will be regarded as gross neglience and will be handled through the BBC disciplinary procedure [link].
+
+## Relevant dates
+
+This standard is effective from DD/MM/YYYY. It is due for review after two years, on DD/MM/YYYY.
+
+Other features removed for brevity here but that may be useful in a standard are a glossary, references, a change log [@sanspolicy], and contact details for the author/and or authorising officer [@hare].
 
 # References

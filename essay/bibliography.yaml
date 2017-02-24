@@ -221,4 +221,56 @@ references:
   publisher-place: Boston, MA
   edition: Second edition
   issued: 2003
+- id: nist800-53
+  title: 'Special Publication 800-53: Security and Privacy Controls for Federal Information Systems and Organizations'
+  author:
+  - literal: NIST
+  type: webpage
+  issued: 2013
+  edition: Revision 4
+  URL: http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf
+  accessed:
+    date-parts:
+    - - 2017
+      - 02
+      - 23
+- id: hare
+  title: 'Information Security Policies, Procedures, and Standards: Establishing an Essential Code of Conduct'
+  author:
+  - family: Hare
+    given: Chris
+  type: webpage
+  issued: 2001
+  edition: Revision 4
+  URL: http://www.ittoday.info/AIMS/DSM/82-10-85.pdf
+  accessed:
+    date-parts:
+    - - 2017
+      - 02
+      - 24
+- id: sanspolicy
+  title: Information Security Policy Templates
+  author:
+    - literal: SANS Institute
+  type: webpage
+  issued: 2014
+  URL: https://www.sans.org/security-resources/policies
+  accessed:
+    date-parts:
+    - - 2017
+      - 02
+      - 24
+- id: howard
+  title: 'The Security Policy Life Cycle: Functions and Responsibilities'
+  author:
+  - family: Howard
+    given: Patrick D.
+  type: webpage
+  issued: 2002
+  URL: http://www.ittoday.info/AIMS/DSM/82-01-06.pdf
+  accessed:
+    date-parts:
+    - - 2017
+      - 02
+      - 24
 ...

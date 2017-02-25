@@ -221,8 +221,24 @@ references:
   publisher-place: Boston, MA
   edition: Second edition
   issued: 2003
+- id: nist800-41
+  title: 'NIST Special Publication 800-41: Guidelines on Firewalls and Firewall Policy'
+  author:
+  - family: Scarfone
+    given: Karen
+  - family: Hoffman
+    given: Paul
+  type: webpage
+  issued: 2009
+  edition: Revision 1
+  URL: http://ws680.nist.gov/publication/get_pdf.cfm?pub_id=901083
+  accessed:
+    date-parts:
+    - - 2017
+      - 02
+      - 23
 - id: nist800-53
-  title: 'Special Publication 800-53: Security and Privacy Controls for Federal Information Systems and Organizations'
+  title: 'NIST Special Publication 800-53: Security and Privacy Controls for Federal Information Systems and Organizations'
   author:
   - literal: NIST
   type: webpage
@@ -273,4 +289,52 @@ references:
     - - 2017
       - 02
       - 24
+- id: pcidss
+  title: Payment Card Industry (PCI) Data Security Standard, v3.2
+  author:
+  - literal: PCI
+  type: webpage
+  issued: 2016
+  URL: https://www.pcisecuritystandards.org/documents/PCI_DSS_v3-2.pdf
+  accessed:
+    date-parts:
+    - - 2017
+      - 02
+      - 24
+- id: imperva
+  title: 'Imperva SecureSphere Web Application Firewall: Datasheet'
+  author:
+  - literal: Imperva
+  type: webpage
+  issued: 2015
+  URL: https://www.imperva.com/docs/ds_securesphere_web_application_firewall.pdf
+  accessed:
+    date-parts:
+    - - 2017
+      - 02
+      - 25
+- id: f5
+  title: 'BIG‑IP Application Security Manager: Datasheet'
+  author:
+  - literal: BIG-IP
+  type: webpage
+  issued: 2016
+  URL: BIG‑IP Application Security Manager
+  accessed:
+    date-parts:
+    - - 2017
+      - 02
+      - 25
+- id: x816
+  title: 'X.816 : Information technology - Open Systems Interconnection - Security frameworks for open systems: Security audit and alarms framework'
+  author:
+  - literal: ITU
+  type: webpage
+  issued: 1999
+  URL: https://www.itu.int/rec/T-REC-X.816-199511-I/en
+  accessed:
+    date-parts:
+    - - 2017
+      - 02
+      - 25
 ...

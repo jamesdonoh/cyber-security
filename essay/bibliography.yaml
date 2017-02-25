@@ -337,4 +337,28 @@ references:
     - - 2017
       - 02
       - 25
+- id: google
+  title: HTTPS on Top Sites
+  author:
+  - literal: Google
+  type: webpage
+  issued: 2017
+  URL: https://www.google.com/transparencyreport/https/grid/
+  accessed:
+    date-parts:
+    - - 2017
+      - 02
+      - 25
+- id: aws
+  title: AWS WAF - Web Application Firewall
+  author:
+  - literal: AWS
+  type: webpage
+  issued: 2017
+  URL: https://aws.amazon.com/waf/
+  accessed:
+    date-parts:
+    - - 2017
+      - 02
+      - 25
 ...

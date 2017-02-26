@@ -41,7 +41,7 @@ Also important is the rise in web applications as an attack vector. The ENISA Th
 
 Recently the BBC has started migrating some of its online services from a centrally-managed application stack running on colocated server hardware to a heterogenous cloud-based model in which products (such as News) provision their own cloud hosting. This will enable a significant reduction in data centre costs, however the transitional 'hybrid' cloud model results in an increased network attack surface (shown in Figure \ref{cloud}).
 
-![BBC website hybrid cloud architecture\label{cloud}](cloud.png){ width=50% }
+![BBC hybrid cloud architecture (most vulnerable point marked with an asterisk)\label{cloud}](cloud.png){ width=50% }
 
 With the move to the cloud, the development of online services at the BBC is embracing a 'DevOps' philosophy based around continuous delivery [@devops]. Where in the past developers wrote software that was then handed over to a specialised operations team for deployment, these traditional operational siloes are changing, with responsibility for deployments being shared. Developers therefore need understanding of the production environment, including operating system and networks, and therefore of the information security challenges unique to these areas.
 
@@ -169,7 +169,5 @@ A third area which presents challenges for WAF adoption at the BBC is the increa
 In the time since the paper was written, organisations such as the BBC have accelerated their transition to cloud hosting. In late 2015 Amazon Web Services (AWS) launched their own Web Application Firewall product [@aws] which has lowered the barriers to adoption through a simple setup process and a pay-as-you-go pricing model (per-rule and per-request). Pubal does refer to a cloud software-as-a-service (SaaS) deployment option for WAFs but does not evaluate any of them in detail. This is a growth area and would a good topic for further investigation.
 
 The concepts of configuration management and infrastructure automation applied to cloud computing have recently come to be closely associated with DevOps [@devops]. Most cloud providers allow architects and developers to define their infrastructure requirements as code, which can be managed and audited through a version control system (VCS). The ability to define WAF rulesets as part of this infrastructure creates an opportunity for web application code to be packaged along with a firewall ruleset tailored to the application by its developers, for automated deployment. This could also be a fruitful area for further research.
-
-# Conclusion
 
 # References

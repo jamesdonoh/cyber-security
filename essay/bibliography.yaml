@@ -361,4 +361,16 @@ references:
     - - 2017
       - 02
       - 25
+- id: wafec
+  title: Web Application Firewall Evaluation Criteria
+  author:
+  - literal: WASC/OWASP
+  type: webpage
+  issued: 2015
+  URL: http://projects.webappsec.org/w/page/13246985/Web%20Application%20Firewall%20Evaluation%20Criteria
+  accessed:
+    date-parts:
+    - - 2017
+      - 02
+      - 25
 ...

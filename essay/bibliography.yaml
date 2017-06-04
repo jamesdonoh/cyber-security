@@ -30,6 +30,16 @@ references:
   edition: Fourth edition
   publisher: McGraw-Hill
   issued: 2016
+- id: beck
+  title: 'Test Driven Development: By Example'
+  author:
+  - family: Beck
+    given: Kent
+  type: book
+  edition: Fourth edition
+  publisher: Addison-Wesley
+  publisher-place: Boston, MA
+  issued: 2002
 - id: stallings
   title: 'Computer Security: Principles and Practice'
   author:

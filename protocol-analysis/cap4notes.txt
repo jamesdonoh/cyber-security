@@ -1,0 +1,54 @@
+
+  - reconnects 11 more times (on port 80) approx. every 2 minutes, but never sends or receives anything
+- 5 seconds after finishing downloading file (packet 939):
+  - tries to connect to 89.149.103.8 on port 80; retransmits SYN twice (+3, +6s), gives up?
+  - same for 93.79.183.88, 93.177.160.235, 212.87.181.1, etc.
+  - finally gets one that SYN-ACKs (81.198.250.32 at 962)
+    - 962-973 weird exchange of binary data
+
+Request:
+00000000  dc dd 27 22 be de 27 22  ce de 27 22 ef e3 27 22   ..'"..'" ..'"..'"
+00000010  f4 e2 27 22 f4 e3 27 22
+...
+
+Response:
+00000000  c9 dd 3a 22 34 de 3a 22  44 de 3a 22 e5 de 3a 22   ..:"4.:" D.:"..:"
+00000010  6a e2 3a 22 c5 d9 3a 22
+...
+    
+    - 971-985 reconnects again to same host on port 80 and GETs /index.htm
+      - but it's fake, claims to be GET but sends data, similar format to before:
+      
+GET /index.htm HTTP/1.1
+Host: 81.198.250.32
+Content-Length: 674
+User-Agent: Mozilla/4.0 (compatible; MSIE 5.5; Windows 95)
+
+.. "l. "|. "m. ".. "r. ".!6w..E1...C..v........j.W+...V.G!6B.=ht.x2...b.]I...F..@Y..p...p...f0|G.....
+TG....@...}."b-.
+..(.K(....O.O.@;.|.V..<.._.)..r.9c_.fu.	.C.!6w..E1...C..v.y.....;..|cm...q......b.!*....L.K}J..'.....h.../.......
+H...W>.	..,6G.Qi....u|...L.)]{>,...+'.0....)Z..~.....}.E.../HU....!...].U.O...aB...3.'.-..Kd.f........hk.WK...	...8b..}.I".'.D,.r....... ..G0....h.I	.=.X...q'T.](.......q$!.qE.-..............uPW.1.	V.....l..Y{x..GpA.d..S..F.5*....zL..{.s1..x.....4.n.9y.(6.Z.<q.te
+....	......
+.\..a...h[....{. .. .._..%..{....[..s.._.~.FB.+..5.n...Q(.D......).,6.&B..M.......q.q=..@N....A.{PxU..7.....e[..,&...XO..b..A.Z.....e..p
+L.......U..e~X.1KmG"T.....Y2HTTP/1.1 200 OK
+Server: Apache
+Content-Length: 0
+Content-Type: text/plain
+Last-Modified: .., 08 ... 2013 03:49:47 GMT
+Accept-Ranges: bytes
+
+    - GET should not include body (http://stackoverflow.com/questions/978061/http-get-with-request-body)
+    - server responds with 200 OK but no data
+    - Then nothing happens for ~3 mins other than some RSTs come back for connections from earlier
+    - Pattern of request lines: /index.htm, /start.htm
+    - Various User-Agent strings sent when making "HTTP" requests, e.g.
+      - Mozilla/4.0 (compatible; MSIE 5.5; Windows 95)
+      - Mozilla/5.0 (X11; U; Linux i686; de-AT; rv:1.7.5) Gecko/20041222 Firefox/1.0 (Debian package 1.0-4)
+      - Mozilla/5.0 (Windows; U; Windows NT 6.1; ja; rv:1.9.2a1pre) Gecko/20090403 Firefox/3.6a1pre
+      - Mozilla/5.0 (Windows; U; Windows NT 6.0; zh-HK; rv:1.8.1.7) Gecko Firefox/2.0
+      - Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.2; Win64; x64; SV1)
+      - Mozilla/5.0 (X11; I; SunOS sun4u; en-GB; rv:1.7.8) Gecko/20050713 Firefox/1.0.4
+
+    - Questions
+      - Is long request-line (/?9gM7920=%96) meaningful or just gobbledegook? Doesn't appear to be text, just binary data
+

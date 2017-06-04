@@ -97,4 +97,41 @@ references:
   publisher: Springer
   volume: 2259
   page: 1-24
+- id: icann
+  title: 'SAC 025: SSAC Advisory on Fast Flux Hosting and DNS'
+  author:
+  - literal: ICANN
+  type: webpage
+  issued: 2008
+  URL: https://www.icann.org/en/system/files/files/sac-025-en.pdf
+  accessed:
+    date-parts:
+    - - 2017
+      - 02
+      - 18
+- id: zytrax
+  title: 'HOWTO - Configure Load Balancing'
+  author:
+  - family: Aitchison
+    given: Ronald
+  type: webpage
+  issued: 2011
+  URL: http://www.zytrax.com/books/dns/ch9/rr.html
+  accessed:
+    date-parts:
+    - - 2017
+      - 02
+      - 18
+- id: wikipedia
+  title: Fast flux
+  author:
+  - literal: Wikipedia
+  type: webpage
+  issued: 2017
+  URL: https://en.wikipedia.org/wiki/Fast_flux
+  accessed:
+    date-parts:
+    - - 2017
+      - 02
+      - 18
 ...

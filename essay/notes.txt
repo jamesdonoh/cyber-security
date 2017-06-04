@@ -1,0 +1,86 @@
+Maiwald / Sieglein
+
+Role of info sec:
+
+- Information security dept cannot guarantee security of organisation's information/systems, can only assist in managing risk (p8); information security is an exercise in risk management
+
+- Security must work within framework of developers' world (p12) - incorporate itself into development methodology, e.g. requirements phase should consider security reqs.
+
+Assessements:
+
+- types of assessment include:
+  - 'self-assessment' (after modifications) - give better sense of security posture, but hard to be objective? don'y rely on them alone
+  - vulnerability assessments (at least quarterly) - esp automated vuln scanners. produce list of found known vulns for each type of technology. 
+    - not foolproof and generate fair amount of false positives
+    - raw output is not analysis - should be analysed by sec professional
+  - pen assessment (external - get reputable 3rd p)
+    - most instrusive - attempts exploitation of above, i.e. 'ethical hacking', attempt to actually break
+    - can be done with or without knowledge of target (blind)
+    - needs a detailed test plan
+    - confirms that vulns are actually exploitable
+  - full 'information security risk assessment' - most comprehensive
+    - looks at all aspects, physical, environment, admin, etc.
+    - rather than just listing vulns it describes why vulns + known threat = risk to org
+    - detailed report identifying areas where info sec is weak and listing ways to improve
+    - interview: person responsible for infosec, HR mgr, network mgr, compliance officer, head of business unit, etc.
+
+Policies
+
+- should be broad/generic enough not to have to change frequently but specific enough not to be ambigous (p59)
+- info sec policies are target at users at all levels of org, so should be written so is relevant to average system user, mgmt, admins, etc.
+- information security policy is the 'mother of all policies'
+- essential to get management buy-in for policies (p70) - critical for success of program. demonstrate loss of revenue etc.
+
+
+Pfleeger / Pfleeger / Marguiles
+
+Detailed chapter on Cloud Computing
+
+- Risk of moving to cloud is that cloud provider becomes single point of failure (p560) - may be geographically distributed but all have same vulns
+
+- 'Cloud Application Security'
+  - Web hosting was the first PaaS; developers have learned to protect applications in shared envs since then
+  - Risks from sharing hardware with other insecure applications
+  - Insecure APIs
+- IaaS opens door to having lots of very specialised VMs tightly locked down (application whitelisting etc.) because it's not 'wasteful' (p581)
+- IaaS allows customers to segregate systems into private network 'enclaves' not addressable from Internet. Protect each enclave with firewall rules. To relay traffic into enclaves: use "application proxy servers"
+  - (You will likely want to) Place typical boundary protection devices (firewalls, IDS, IPS etc.) in VMs that sit between Internet and proxy servers.
+
+
+Abbadi
+
+- Finds NIST and EU definitions of 'Cloud computing' inconsistent and provides a third (p3)
+- "Privacy, security and trust is a top challenge of Cloud that directly prevents its wider adoption, especially by critical infrastucture"
+...
+- (Probably more in here but very low-level/dry)
+
+
+Cheswick, Bellovin, Rubin
+
+- "There is no such thing as absolute security" (p3) - we can raise the attacker's cost of breaching our security
+- "An attacker doesn't go through security but around it. Their goal is to find and exploit the weakest link"
+- "the attacker only has to win once" (p11) - if the attacker finds one weakness your system _will_ be penetrated
+- Argument against firewalls: target of attackers is hosts so hosts should be suitably configured/armored
+- No matter how well written the code .... subsequent human error can negate all of the protections
+
+- Define a firewall as "a collection of components placed between two networks" ... with following properties:
+  - "all traffic from inside to outside, and vice-versa, must past through the firewall" "
+  - only authorized traffic as defined by local security policy will be allowed to pass
+  - the firewall itself is immune to penetration (p13)
+- Use of a DMZ is an example of defense in depth (p15)
+- Three categories of firewall: packet filtering, circuit gateways and appliation gateways (p175) - characterised by protocol level "but these categories get blurred" (p175)
+  - one limitation of packet filtering is that we trust what port numbers are being used for (e.g. is 25 really mail?)
+  - performance impact depends on number of rules
+- "Application-level filters deal with the details of the particular service they are checking"
+  - Advantage is that they also allow _all_ incoming traffic to be logged and controlled (unlike packet filter)
+- What firewalls cannot do - cannot do everything, can give false sense of security (p194)
+  - Useless against attacks from inside
+- "Higher-level filtering is more intrusive, slower to process and less comprehensive, because there are so many processing options for ea h package as you move up the stack (p195)
+
+
+Bits?
+
+- egress filtering? (Scafone 2-3)
+- Criteria for choosing application firewalls: Scarfone 4-5
+- Skils required to configure and set up? (mentioned in conclusion)
+

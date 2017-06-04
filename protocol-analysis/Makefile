@@ -2,10 +2,12 @@ default: report.pdf
 
 report.pdf: report.md bibliography.yaml
 	pandoc --filter pandoc-citeproc \
+		--csl harvard-bournemouth-university.csl \
 		--bibliography=bibliography.yaml \
-		-V geometry:a4paper \
 		--latex-engine=xelatex \
+		-V geometry:a4paper \
 		-V mainfont=Constantia \
+		-V colorlinks \
 		-s -o $@ $<
 
 clean:
